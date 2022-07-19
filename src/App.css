@@ -1,46 +1,97 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --primary: #003459;
+  --secondary: #DBDCE0;
+  --dark: #00171f;
+  --light: #ffffff;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+  background-color: var(--light);
+}
 
 .App {
-  box-sizing: border-box;
-  width: 100vw;
-  height: 70vh;
+  min-width: 100vw;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.custom-row {
-  width: 50vh;
 
-  border: 2px solid red;
-}
-
-.custom-header {
+.calculator {
+  min-height: 500px;
   width: 100%;
-  height: 10vh;
-  border: 2px solid blue;
-  background-color:orange;
+  max-width: 450px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 64px rgba(0, 0, 0, 0.2);
 }
 
-.custom-main {
-  width: 390px;
-  height: 500px;
-
+.display {
+  background-color: var(--dark);
+  padding: 30px;
+  text-align: right;
+  color: var(--light);
+  font-size: 30px;
+  font-weight: 300;
 }
 
-.custom-cell {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  height: 100px;
-  border-bottom: 1px solid rgb(156, 146, 146);
+.display, span { 
+  font-size: 14px;
+  color: #888;
+
 }
 
 button {
-  font-size: 30px;
-  color: black;
+  width: 4rem;
+  height: 5.3rem;
+  color: rgb(63, 52, 52);
+  border: none;
+  outline: none;
+  appearance: none;
+  font-size: 20px;
+  transition: 0.4s;
+  
+}
+
+button:hover {
+  opacity: 0.9;
 }
 
 
+.operators {
+  display: flex;
+}
 
+.operators button {
+  flex: 1 1 0%;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.digitis {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.digitis button{
+  flex: 1 1 33.333%;
+  max-width: 33.333%;
+  background-color: #e73e3ef1;
+  color: white;
+}
+
+.results {
+  color: goldenrod;
+  font-size: large;
+}
